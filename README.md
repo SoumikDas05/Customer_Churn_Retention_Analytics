@@ -48,3 +48,51 @@ Active Customer	               cancellation_date is missing → churn_flag = 0
 
 </p>
 
+<h2>Calculated Metrics</h2>
+<p>
+  KPI :                                          Formula
+  
+Churn Rate	:                         (Churned Customers/Total Customers)
+
+Retention Rate	    :                1 − Churn Rate
+
+Churn by Plan Type	:                Churn Rate Group By plan_type(Basic/Standard/Premium)
+
+Churn by State	   :                 Churn Rate Group By country, state
+
+Average Revenue per Customer   :    	SUM(monthly_charges)/COUNT(activate_customerid)
+
+Average Customer Tenure	      :     AVG(DATEDIFF(cancellation_date OR NOW(),subscription_start_date
+
+Revenue at Risk	       :             SUM(monthly_charges) WHERE churn_score > 70
+
+Escalation Rate       :             	SUM(escalations)/COUNT(complaints)*100
+
+Average Complaints per Customer	 :   COUNT(complaints)/COUNT(DISTINCT customerid)
+
+Escalation vs Churn Correlation	  :  Churn rate WHERE escalations >= 1 vs 0
+
+
+Churn Risk	Churn Score ≤ 50 → Low, 51–69 → Medium, ≥ 70 → High
+
+</p>
+
+<h2>Insights</h2>
+<p>
+•	Churn Rate: 34.78/%   |  Retention Rate:  65.22%
+  
+•	Most of the churn is from the basic subscription plan – nothing to worry about in terms of major revenue impact 
+
+•	Most of the churn happened in Sep 2024, and the most affected state is Karnataka 
+
+•	Average Tenure (Days): 1,470  |  ARPU is Rs 18.51
+
+•	Total Revenue = 395
+
+•	Revenue loss due to churn = 74  |  CLTV Lost = 2,047
+
+•	% Revenue loss = 18% 
+
+•	monthly vs annual churn = 55.6% vs 8.3% 
+
+</p>
